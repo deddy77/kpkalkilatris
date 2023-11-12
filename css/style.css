@@ -1,0 +1,191 @@
+/* Styles par défaut pour les écrans larges (ordinateurs de bureau, laptops, etc.) */
+body {
+    max-width: 600px; /* ou toute autre valeur souhaitée pour la largeur maximale */
+    margin: 0 auto; /* Centre le contenu sur l'écran */
+}
+
+/* Styles spécifiques pour les écrans étroits (téléphones mobiles) */
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%; /* Utilise toute la largeur de l'écran */
+        max-width: none; /* Supprime la largeur maximale définie précédemment */
+    }
+}
+
+
+
+/* code above need a review as some testers are still facing issues with the display of the calculator on mobile devices*/
+/* Other testers can't access to the webapp lin*/ 
+
+
+
+
+
+/* Style of the main container that hold all the parts of the webapp*/
+.mainContainer{
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+
+
+    .main {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 20px; /* You can adjust the padding based on your design */
+        margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Syle of both banner elements (top & bottom)*/
+.banner{
+    width: 500px;
+    height: 100px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style of the image inserted in the top banner*/
+.banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+#adsense{
+    width: 500px;
+    height: 13px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* This style is left commented while I fugure out why I added it in th css
+.output{
+    width: 500px;
+    height: 100%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: line;
+    justify-content: center;
+    align-items: center;
+}*/
+
+/*This is the black screen of the calculator*/
+.screen{
+    width: 500px;
+    height: 100px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: left;
+    background-color: #080808;
+}
+
+/*This is the mememory side design of the calculator*/
+#memory {
+    width: 100%;
+    height: 50%;
+    font-size: 47px;
+    font-weight: bold;
+    color: orange;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    
+}
+
+/*This is the display side design of the calculator, the current input of the user*/
+#display{
+    width: 100%;
+    height: 50%;
+    font-size: 47px;
+    font-weight: bold;
+    color: #f8f6f6;
+    text-align: right;
+    padding: 0;
+    margin: 0; 
+   
+}
+/*This block of styles handles the keypad of the calculator*/
+.keyPad{
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: line;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle{
+    width: 50%;
+    height: 100px;
+    background-color: #f2f2f2;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.square{  
+    width: 25%;
+    height: 100px;
+    background-color: #f2f2f2;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    }
+
+.symbol{
+    font-size: 50px;
+    font-weight: bold;
+    color: #080808;
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.digit{
+    font-size: 50px;
+    font-weight: bold;
+    color: #fffefe;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(98, 99, 99);
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.function{
+    font-size: 50px;
+    font-weight: bold;
+    color: #080808;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(185, 187, 187);
+}
+/*End of the keypad styles*/
+
+/*This block of styles handles the hover effect of the keypad*/
+.symbol:hover,
+.digit:hover,
+.function:hover{
+    background-color: rgb(214, 202, 184);
+}
+
+/*
+  Copyright (c) 2023 Wood Eddy Donald JEAN JULIEN. All rights reserved.
+*/

@@ -1,0 +1,131 @@
+<!-- Copyright (c) 2023 Wood Eddy Donald JEAN JULIEN. All rights reserved. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Page</title>
+    <style>
+        /* Customize the dialog styles */
+        .custom-dialog {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .custom-dialog-message {
+            margin-bottom: 20px;
+        }
+
+        .custom-dialog-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .custom-dialog-btn {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .custom-dialog-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            checkDeviceAndLoad();
+        });
+
+        function showCustomDialog(message, callback) {
+            // Create a custom-styled dialog
+            const dialog = document.createElement('div');
+            dialog.classList.add('custom-dialog');
+
+            // Set the dialog message
+            const messageElement = document.createElement('p');
+            messageElement.classList.add('custom-dialog-message');
+            messageElement.textContent = message;
+            dialog.appendChild(messageElement);
+
+            // Create buttons
+            const buttonsContainer = document.createElement('div');
+            buttonsContainer.classList.add('custom-dialog-buttons');
+
+            const acceptButton = document.createElement('a');
+            acceptButton.classList.add('custom-dialog-btn');
+            acceptButton.textContent = 'Oui';
+            acceptButton.href = '#';
+            acceptButton.addEventListener('click', function () {
+                document.body.removeChild(dialog);
+                callback(true);
+            });
+
+            const cancelButton = document.createElement('a');
+            cancelButton.classList.add('custom-dialog-btn');
+            cancelButton.textContent = 'Non';
+            cancelButton.href = '#';
+            cancelButton.addEventListener('click', function () {
+                document.body.removeChild(dialog);
+                callback(false);
+            });
+
+            // Append buttons to the container
+            buttonsContainer.appendChild(acceptButton);
+            buttonsContainer.appendChild(cancelButton);
+
+            // Append buttons container to the dialog
+            dialog.appendChild(buttonsContainer);
+
+            // Append the dialog to the body
+            document.body.appendChild(dialog);
+        }
+    </script>
+</body>
+</html>
+
+//Copyright (c) 2023 Wood Eddy Donald JEAN JULIEN. All rights reserved.
+
+function checkDeviceAndLoad() {
+    // Verify if the device is a mobile device
+    if (window.innerWidth <= 1024) {
+        // Load the kpk.html file
+        loadKpkFile();
+    } else {
+        // Ask user if he wants to open the kpk.html file in a custom-styled dialog
+        showCustomDialog("Ou vle sevi ak KPKalkilatris?", function (userAcceptance) {
+            if (userAcceptance) {
+                // Open a pop-up window and load the kpk.html file
+                openPopupAndLoadKpkFile();
+            } else {
+                // User doesn't want to open the kpk.html file in a pop-up window
+            }
+        });
+    }
+}
+
+function loadKpkFile() {
+    //Load the kpk.html file
+    $('body').load('kpk.html');
+}
+
+function openPopupAndLoadKpkFile() {
+    // Open a pop-up window and load the kpk.html file
+    window.open('kpk.html', 'NomDeLaFenetrePopup', 'width=500,height=720');
+}
