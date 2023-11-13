@@ -1,81 +1,100 @@
 <!-- Copyright (c) 2023 Wood Eddy Donald JEAN JULIEN. All rights reserved. -->
 <!DOCTYPE html>
 <html lang="en">
-     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>KPKalkilatris</title>
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KPKalkilatris</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
 
-    <body>
-        <container id = "main" class = "mainContainer"> 
-           
-            <container id = "banner" class ="banner" >
-                <img id = "banner-image" src = "images/bannerTop.png" alt = "banner KPK" >
-            </container>
-            
-            <container id = "calculator" class="output">
-                <div id = "screen" class ="screen">
-                    <div id = "memory" class="memory"></div>
-                    <div id = "display" class="display"></div>
-                </div>
-            </container>
+<body>
+    <div id="main" class="mainContainer" role="main">
 
-            <container class="keyPad">
-                <div class="rectangle">
-                    <button id = "clear" class="function button">C</button></div>
-                <div class="square button">
-                    <button id = "backspace" class="function button"><</button></div>
-                <div class="square button">
-                    <button id ="operator" class="symbol button operator">/</button></div>
-            </container>
+        <div id="banner" class="banner" role="banner">
+            <img id="banner-image" src="images/bannerTop.png" alt="banner KPK" aria-labelledby="banner-image">
+        </div>
 
-            <container class = "keyPad">
-                <div class = "square button">
-                    <button id = "7" class="digit">7</button></div>
-                <div class = "square button">
-                    <button id  ="8" class="digit">8</button></div>
-                <div class = "square button">
-                    <button class="digit">9</button></div>
-                <div class="square button">
-                    <button id = "operator" class="symbol operator">*</button></div>
-            </container>
-        
-             <container class = "keyPad">
-                <div class = "square button">
-                    <button class="digit">4</button></div>
-                <div class = "square button">
-                    <button class="digit">5</button></div>
-                <div class = "square button">
-                    <button class="digit">6</button></div>
-                <div class="square button">
-                    <button id = "operator" class="symbol operator">-</button></div>
-                </container>
+        <div id="calculator" class="output" role="application" aria-label="Calculator">
+            <div id="screen" class="screen" aria-live="polite" role="region" aria-label="Calculator Screen">
+                <div id="memory" class="memory" role="status"></div>
+                <div id="display" class="display" role="status"></div>
+            </div>
+        </div>
 
-            <container class = "keyPad">
-                <div class = "square button">
-                    <button class="digit">1</button></div>
-                <div class = "square button">
-                    <button class="digit">2</button></div>
-                <div class = "square button">
-                    <button class="digit">3</button></div>
-                <div class="square button">
-                    <button id ="operator" class="symbol operator">+</button></div>
-            </container>
+        <div class="keyPad" role="group" aria-label="Keypad">
+            <div class="rectangle">
+                <button id="clear" class="function button" role="button" aria-label="Clear">C</button>
+            </div>
+            <div class="square button">
+                <button id="backspace" class="function button" role="button" aria-label="Backspace">‹</button>
+            </div>
+            <div class="square button">
+                <button id="operator" class="symbol button operator" role="button" aria-label="Divide">/</button>
+            </div>
+        </div>
 
-            <container class = "keyPad">
-                <div class = "rectangle button">
-                    <button class="digit">0</button></div>
-                <div class = "square button">
-                    <button id="dot" class="digit">.</button></div>
-                <div class = "square button">
-                    <button id="equal" class="symbol equal">=</button></div>
-            </container>
-         
-            <container id="adsense">// Testers pleasee feedback me please @ +509 37 77 81 34 (Whatsapp only) \\</container>
-    
+        <container class="keyPad" role="group" aria-label="Numeric Keypad">
+            <div class="square button">
+                <button id="7" class="digit" role="button" aria-label="7">7</button>
+            </div>
+            <div class="square button">
+                <button id="8" class="digit" role="button" aria-label="8">8</button>
+            </div>
+            <div class="square button">
+                <button class="digit" role="button" aria-label="9">9</button>
+            </div>
+            <div class="square button">
+                <button id="operator" class="symbol operator" role="button" aria-label="Multiply">*</button>
+            </div>
         </container>
+        
+        <container class="keyPad" role="group" aria-label="Numeric Keypad">
+            <div class="square button">
+                <button class="digit" role="button" aria-label="4">4</button>
+            </div>
+            <div class="square button">
+                <button class="digit" role="button" aria-label="5">5</button>
+            </div>
+            <div class="square button">
+                <button class="digit" role="button" aria-label="6">6</button>
+            </div>
+            <div class="square button">
+                <button id="operator" class="symbol operator" role="button" aria-label="Subtract">-</button>
+            </div>
+        </container>
+        
+        <container class="keyPad" role="group" aria-label="Numeric Keypad">
+            <div class="square button">
+                <button class="digit" role="button" aria-label="1">1</button>
+            </div>
+            <div class="square button">
+                <button class="digit" role="button" aria-label="2">2</button>
+            </div>
+            <div class="square button">
+                <button class="digit" role="button" aria-label="3">3</button>
+            </div>
+            <div class="square button">
+                <button id="operator" class="symbol operator" role="button" aria-label="Addition">+</button>
+            </div>
+        </container>
+        
+        <container class="keyPad" role="group" aria-label="Numeric Keypad">
+            <div class="rectangle button">
+                <button class="digit" role="button" aria-label="0">0</button>
+            </div>
+            <div class="square button">
+                <button id="dot" class="digit" role="button" aria-label="Decimal Point">.</button>
+            </div>
+            <div class="square button">
+                <button id="equal" class="symbol equal" role="button" aria-label="Equals">=</button>
+            </div>
+        </container>
+        
+        <container id="adsense" role="contentinfo" aria-live="assertive">
+            Testers please feedback me at +509 37 77 81 34 (WhatsApp only)
+        </container>
+        
             
             <script src="js/scriptKpk.js"></script>
 
